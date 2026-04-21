@@ -1,0 +1,117 @@
+/* NOTE: Mobile first layout  */
+/* ANCHOR Global values */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Poppins', Verdana;
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    border: 1.5px solid white;
+    border-radius: 2px;
+    padding: 0.7rem 0;
+    letter-spacing: 2px;
+    font-weight: 300;
+    width: 15rem;
+    margin-top: 3rem;
+    background: none;
+
+    transition: all 0.35s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    border-color: rgb(247, 212, 158);
+
+    a {
+        color: rgb(247, 212, 158);
+    }
+}
+
+/* ANCHOR Hero section */
+section {
+    width: 100vw;
+    height: 100vh;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+        url('../project-images/landing-page-background.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 15rem;
+    margin-top: 5rem;
+}
+
+.description-1 {
+    font-family:
+        'Alex Brush',
+        Brush Script MT;
+    font-size: 2rem;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.description-2 {
+    font-size: 1rem;
+}
+
+/* ANCHOR Keyframes for logo and description */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+}
+
+.logo,
+.description-1,
+.description-2 {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.logo {
+    animation-delay: 0.3s;
+}
+
+.description-1 {
+    animation-delay: 0.7s;
+}
+
+.description-2 {
+    animation-delay: 1s;
+}
+
+/* NOTE Desktop media query */
+@media screen and (min-width: 1200px) {
+    .logo {
+        width: 20rem;
+        margin-bottom: 7rem;
+    }
+
+    .description-1 {
+        font-size: 4rem;
+    }
+
+    .description-2 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+}

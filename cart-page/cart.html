@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="style-cart.css" />
+        <script src="./cart.js" defer></script>
+
+        <title>
+            Le Petit Bread - A taste of Boulangerie-Pâtisserie - Shopping cart
+        </title>
+    </head>
+    <body>
+        <!-- header - navbar -->
+        <header class="nav-header">
+            <nav class="navbar">
+                <div class="nav-left">
+                    <a href="../main-page/main.html"
+                        ><img
+                            id="logo"
+                            src="../project-images/logo-cream.png"
+                            alt="logo"
+                    /></a>
+
+                    <a class="brand" href="../main-page/main.html"
+                        >Le Petit Bread</a
+                    >
+                </div>
+
+                <!-- desktop navbar -->
+                <div class="nav-right-container">
+                    <div class="nav-right-1">
+                        <ul class="nav-ul">
+                            <li><a href="../menu-page/menu.html">Menu</a></li>
+                            <li>
+                                <a href="../how-to-order-page/how-to-order.html"
+                                    >How To Order</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="../delivery-and-pricing-page/delivery-and-pricing.html"
+                                    >Delivery & Pricing</a
+                                >
+                            </li>
+                            <li><a href="#testimonial">Testimonials</a></li>
+                            <li>
+                                <a href="../contact-page/contact.html"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-right-2">
+                        <img
+                            id="search-btn"
+                            src="../project-images/search.svg"
+                            alt="search button"
+                        />
+                        <a href="../cart-page/cart.html"
+                            ><img
+                                src="../project-images/shopping-bag.svg"
+                                alt="shopping cart button"
+                                id="shopping-bag"
+                        /></a>
+                        <img
+                            src="../project-images/hamburger-menu.svg"
+                            alt="hamburger menu button"
+                            id="hamburger-btn"
+                        />
+                    </div>
+                    <!-- search bar -->
+                    <form class="search-form" action="">
+                        <div class="search">
+                            <img
+                                class="search-icon-inside-bar"
+                                src="../project-images/search.svg"
+                                alt="search icon"
+                            />
+                            <input
+                                type="search"
+                                class="search-input"
+                                id="search-input"
+                                name="search-input"
+                                placeholder="search"
+                            />
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <aside class="mobile-menu">
+                <ul>
+                    <li>
+                        <img
+                            id="close-btn"
+                            class="menu-control"
+                            src="../project-images/close-box.svg"
+                            alt="mobile menu icon"
+                        />
+                    </li>
+                    <li>
+                        <a class="hamburger-links" href="../main-page/main.html"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a class="hamburger-links" href="../menu-page/menu.html"
+                            >Menu</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../how-to-order-page/how-to-order.html"
+                            >How To Order</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../delivery-and-pricing-page/delivery-and-pricing.html"
+                            >Delivery & Pricing</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../main-page/main.html#testimonial"
+                            >Testimonials</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../contact-page/contact.html"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </aside>
+        </header>
+        <main>
+            <section class="section-cart">
+                <div class="container py-5">
+                    <h1 class="mb-5 cart-title">Your Shopping Cart</h1>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!-- Cart Items -->
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="row cart-item mb-3">
+                                        <div class="col-md-3">
+                                            <img
+                                                src="../project-images/choose-bread.jpg"
+                                                alt="Product 1"
+                                                class="img-fluid rounded"
+                                            />
+                                        </div>
+                                        <div class="col-md-5">
+                                            <h5 class="card-title">
+                                                Product 1
+                                            </h5>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="input-group">
+                                                <button
+                                                    class="btn btn-outline-secondary btn-sm"
+                                                    type="button"
+                                                >
+                                                    -
+                                                </button>
+                                                <input
+                                                    style="max-width: 100px"
+                                                    type="text"
+                                                    class="form-control form-control-sm text-center quantity-input"
+                                                    value="1"
+                                                />
+                                                <button
+                                                    class="btn btn-outline-secondary btn-sm"
+                                                    type="button"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 text-end">
+                                            <p class="fw-bold">$99.99</p>
+                                            <button
+                                                class="btn btn-sm btn-outline-danger"
+                                            >
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row cart-item">
+                                        <div class="col-md-3">
+                                            <img
+                                                src="../project-images/choose-bread.jpg"
+                                                alt="Product 2"
+                                                class="img-fluid rounded"
+                                            />
+                                        </div>
+                                        <div class="col-md-5">
+                                            <h5 class="card-title">
+                                                Product 2
+                                            </h5>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="input-group">
+                                                <button
+                                                    class="btn btn-outline-secondary btn-sm"
+                                                    type="button"
+                                                >
+                                                    -
+                                                </button>
+                                                <input
+                                                    style="max-width: 100px"
+                                                    type="text"
+                                                    class="form-control form-control-sm text-center quantity-input"
+                                                    value="2"
+                                                />
+                                                <button
+                                                    class="btn btn-outline-secondary btn-sm"
+                                                    type="button"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 text-end">
+                                            <p class="fw-bold">$49.99</p>
+                                            <button
+                                                class="btn btn-sm btn-outline-danger"
+                                            >
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Continue Shopping Button -->
+                            <div class="text-start mb-4">
+                                <a
+                                    href="../menu-page/menu.html"
+                                    class="btn btn-outline-warning"
+                                >
+                                    <i class="bi bi-arrow-left me-2"></i
+                                    >Continue Shopping
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <!-- Cart Summary -->
+                            <div class="card cart-summary">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">
+                                        Order Summary
+                                    </h5>
+                                    <div
+                                        class="d-flex justify-content-between mb-3"
+                                    >
+                                        <span>Subtotal</span>
+                                        <span>$199.97</span>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between mb-3"
+                                    >
+                                        <span>Shipping</span>
+                                        <span>$10.00</span>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between mb-3"
+                                    >
+                                        <span>Tax</span>
+                                        <span>$20.00</span>
+                                    </div>
+                                    <hr />
+                                    <div
+                                        class="d-flex justify-content-between mb-4"
+                                    >
+                                        <strong>Total</strong>
+                                        <strong>$229.97</strong>
+                                    </div>
+                                    <button class="btn btn-warning w-100">
+                                        Proceed to Checkout
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Promo Code -->
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">
+                                        Apply Promo Code
+                                    </h5>
+                                    <div class="input-group mb-3">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Enter promo code"
+                                        />
+                                        <button
+                                            class="btn btn-outline-secondary"
+                                            type="button"
+                                        >
+                                            Apply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-left">
+                <a href="../index.html">Le Petit Bread &copy; 2026</a>
+            </div>
+            <div class="footer-right">
+                <a href="#"
+                    ><img src="../project-images/instagram.svg" alt="instagram"
+                /></a>
+                <a href="#"
+                    ><img src="../project-images/facebook.svg" alt="facebook"
+                /></a>
+                <a href="#"
+                    ><img src="../project-images/twitter.svg" alt="twitter"
+                /></a>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

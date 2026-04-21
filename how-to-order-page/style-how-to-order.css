@@ -1,0 +1,556 @@
+/* ANCHOR Global values */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Poppins', Verdana;
+    color: #534033;
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: 1px;
+}
+
+body {
+    background-color: #32271f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* custom scrollbar */
+html::-webkit-scrollbar {
+    width: 12px;
+}
+html::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #bbaf9b;
+    border: 1px solid #cacaca;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #654e3e;
+}
+
+/* ANCHOR Nav bar styling */
+/* NOTE Mobile first */
+.nav-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    opacity: 95%;
+}
+.navbar {
+    background-color: #fcfaf3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem 0 0.5rem;
+    white-space: nowrap;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    color: #988566;
+    font-family:
+        'Alex Brush',
+        Brush Script MT;
+    font-size: 2rem;
+    padding-top: 5px;
+    letter-spacing: 2px;
+}
+
+.nav-ul {
+    display: none;
+}
+
+/* nav links hover effect */
+.nav-right-1 a {
+    color: #8a9a5b;
+    position: relative;
+}
+
+.nav-right-1 a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #c8b7aa;
+    transition: width 0.3s ease;
+}
+
+.nav-right-1 a:hover::after {
+    width: 100%;
+}
+
+/* ---------------------------- */
+#logo {
+    height: 5rem;
+}
+
+#search-btn {
+    height: 2rem;
+    opacity: 0.5;
+}
+
+#shopping-bag {
+    height: 1.8rem;
+    padding-bottom: 4px;
+    opacity: 0.5;
+}
+
+#hamburger-btn {
+    height: 1.9rem;
+    opacity: 0.6;
+}
+
+/* NOTE Search bar */
+.search-form {
+    display: none;
+    position: relative;
+}
+
+.search-icon-inside-bar {
+    height: 2rem;
+    opacity: 0.5;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #eeeeee;
+
+    transition: box-shadow 0.25s;
+}
+
+.search-input {
+    width: 100%;
+    color: #333333;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.search:focus-within {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+.open-search-bar {
+    display: flex;
+}
+
+.hide-nav-right-2,
+.hide-desktop-nav {
+    display: none;
+}
+
+.search-error {
+    color: red;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+}
+
+/* NOTE navbar - desktop media query */
+@media screen and (min-width: 1200px) {
+    .brand {
+        transform: scale(1.2) translateX(10%);
+    }
+    .nav-right-container {
+        display: flex;
+        gap: 3rem;
+    }
+    .nav-ul {
+        display: flex;
+        padding-top: 6px;
+        letter-spacing: 1px;
+        gap: 2.5rem;
+
+        a {
+            color: #988566;
+            font-size: 1.2 rem;
+        }
+    }
+
+    #hamburger-btn {
+        display: none;
+    }
+
+    .search {
+        min-width: 400px;
+    }
+}
+
+/* ANCHOR Hamburger menu styling */
+
+#close-btn {
+    width: 4rem;
+    position: relative;
+    transform: translateY(-15px);
+}
+
+.mobile-menu {
+    background-color: rgb(120, 72, 30);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 2rem 2rem;
+    letter-spacing: 2px;
+    text-align: end;
+
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    z-index: 3;
+}
+
+.mobile-menu a {
+    color: white;
+    font-size: 2rem;
+}
+
+.mobile-menu a:hover {
+    color: rgb(220, 201, 190);
+}
+
+.open-menu {
+    transform: translateX(0%);
+}
+
+/* ANCHOR heading styling */
+.how-to-order-section {
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 80vh;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url('../project-images/banana-bread-bg.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.heading-container {
+    text-align: center;
+    margin-left: 3rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Poppins', Verdana;
+    letter-spacing: 2px;
+
+    padding: 30px 0 8px;
+    position: relative;
+    display: inline-block;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    width: 100%;
+    height: 14px;
+    transform: skew(-12deg) translateX(10%);
+    background: rgba(172, 99, 85, 0.5);
+    opacity: 0.9;
+
+    animation: highlightGrow 1s ease-in forwards;
+}
+
+@keyframes highlightGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.heading-des {
+    font-family: 'Poppin', Verdana, Geneva, Tahoma, sans-serif;
+    transform: translateX(20%) translateY(-35%);
+    width: 80%;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* ANCHOR Individual card styling */
+.how-to-order-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.individual-card,
+.card-top {
+    display: flex;
+    gap: 2rem;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 1rem;
+    border-radius: 20px;
+
+    position: relative;
+
+    align-items: stretch;
+}
+
+.card-bottom {
+    display: none;
+}
+
+.card-icon img {
+    height: 3.5rem;
+}
+
+.arrow-icon {
+    height: 3rem;
+    transform: rotate(90deg);
+}
+
+.individual-card-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.3rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.individual-card-text p {
+    font-size: 0.8rem;
+}
+
+/* NOTE keyframe for individual cards */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 0.8;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 0.8;
+        transform: translateX(0);
+    }
+}
+
+.card-1,
+.card-3 {
+    animation: fadeInRight 1s ease-in forwards;
+}
+
+.card-2 {
+    animation: fadeInLeft 1s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.card-3 {
+    animation-delay: 2s;
+}
+
+/* ANCHOR Desktop media query */
+@media screen and (min-width: 1200px) {
+    .how-to-order-section {
+        height: 80vh;
+    }
+    .heading-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .heading-des {
+        transform: translateX(0);
+    }
+
+    .how-to-order-container {
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .individual-card {
+        flex-direction: column;
+        margin: 3rem 2rem;
+        width: 23rem;
+        height: 27rem;
+    }
+
+    .card-top {
+        padding-top: 1rem;
+        margin: 0;
+        min-width: 20rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.1rem;
+    }
+
+    .card-icon {
+        transform: translateX(-15%);
+    }
+
+    h3 {
+        padding-bottom: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .individual-card-text {
+        width: 100%;
+    }
+
+    .arrow-icon {
+        transform: rotate(0);
+    }
+
+    .card-icon img {
+        height: 5rem;
+    }
+
+    .card-2 {
+        animation: fadeInRight 1s ease-in forwards;
+        animation-delay: 1s;
+    }
+
+    .card-bottom {
+        display: flex;
+        align-items: stretch;
+        width: 20rem;
+        height: 20rem;
+
+        align-self: center;
+        border-radius: 10px;
+    }
+
+    .card-bottom-1 {
+        background-image: url('../project-images/choose-bread.jpg');
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .card-bottom-2 {
+        background-image: url('../project-images/place-your-order.jpg');
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .card-bottom-3 {
+        background-image: url('../project-images/delivery-person.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0.3;
+            transform: translateX(-50%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+}
+
+/* NOTE button styling*/
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem 4rem;
+    min-width: 15rem;
+    margin-bottom: 4rem;
+    transition: all 0.35s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 29px rgba(50, 39, 31, 0.18);
+}
+
+/* ANCHOR Footer styling */
+footer {
+    background-color: #32271f;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    min-height: 6rem;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #bbaf9b;
+}
+
+footer img {
+    height: 30px;
+}
+
+footer a:hover {
+    transform: translateY(10%);
+}
+
+.footer-left a {
+    display: inline-block;
+}
+.footer-left a:hover {
+    transform: translateY(10%);
+}
+
+.footer-right {
+    display: flex;
+    gap: 1rem;
+}

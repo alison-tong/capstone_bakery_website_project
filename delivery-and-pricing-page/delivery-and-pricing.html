@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style-delivery-and-pricing.css" />
+        <script src="delivery.js" defer></script>
+        <title>
+            Le Petit Bread - A taste of Boulangerie-Pâtisserie - Delivery and
+            Pricing
+        </title>
+    </head>
+    <body id="top">
+        <!-- ANCHOR Navbar -->
+        <header class="nav-header">
+            <nav class="navbar">
+                <div class="nav-left">
+                    <a href="../main-page/main.html"
+                        ><img
+                            id="logo"
+                            src="../project-images/logo-cream.png"
+                            alt="logo"
+                    /></a>
+
+                    <a class="brand" href="../main-page/main.html"
+                        >Le Petit Bread</a
+                    >
+                </div>
+                <!-- ANCHOR desktop navbar -->
+                <div class="nav-right-container">
+                    <div class="nav-right-1">
+                        <ul class="nav-ul">
+                            <li><a href="../menu-page/menu.html">Menu</a></li>
+                            <li>
+                                <a href="../how-to-order-page/how-to-order.html"
+                                    >How To Order</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#top">Delivery & Pricing</a>
+                            </li>
+                            <li>
+                                <a href="../main-page/main.html#testimonial"
+                                    >Testimonials</a
+                                >
+                            </li>
+                            <li>
+                                <a href="../contact-page/contact.html"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-right-2">
+                        <img
+                            id="search-btn"
+                            src="../project-images/search.svg"
+                            alt="search button"
+                        />
+                        <a href="../cart-page/cart.html"
+                            ><img
+                                src="../project-images/shopping-bag.svg"
+                                alt="shopping cart button"
+                                id="shopping-bag"
+                        /></a>
+                        <img
+                            src="../project-images/hamburger-menu.svg"
+                            alt="hamburger menu button"
+                            id="hamburger-btn"
+                        />
+                    </div>
+                    <!-- search bar -->
+                    <form class="search-form" action="">
+                        <div class="search">
+                            <img
+                                class="search-icon-inside-bar"
+                                src="../project-images/search.svg"
+                                alt="search icon"
+                            />
+                            <input
+                                type="search"
+                                class="search-input"
+                                id="search-input"
+                                name="search-input"
+                                placeholder="search"
+                            />
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <aside class="mobile-menu">
+                <ul>
+                    <li>
+                        <img
+                            id="close-btn"
+                            class="menu-control"
+                            src="../project-images/close-box.svg"
+                            alt="mobile menu icon"
+                        />
+                    </li>
+                    <li>
+                        <a class="hamburger-links" href="../main-page/main.html"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a class="hamburger-links" href="../menu-page/menu.html"
+                            >Menu</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../how-to-order-page/how-to-order.html"
+                            >How To Order</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../delivery-and-pricing-page/delivery-and-pricing.html"
+                            >Delivery & Pricing</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../main-page/main.html#testimonial"
+                            >Testimonials</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hamburger-links"
+                            href="../contact-page/contact.html"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </aside>
+        </header>
+
+        <main>
+            <!-- ANCHOR Pricing plan section -->
+            <section class="pricing-plan-section">
+                <header>
+                    <h1>Delivery & Pricing</h1>
+                    <h2>Browse our menu and build your own order</h2>
+                    <p class="heading-des des-2">No minimum order required.</p>
+                </header>
+
+                <!-- ANCHOR Pricing plan cards -->
+                <p class="choose-option-p">
+                    Then, choose your delivery option:
+                </p>
+                <div class="pricing-plan-container">
+                    <article class="pricing-plan-card">
+                        <h3>Standard Delivery</h3>
+                        <img
+                            src="../project-images/standard-delivery-icon-no-bg.png"
+                            alt="bicycle icon"
+                        />
+                        <div class="price-text standard-text">
+                            <p class="price-tag">$3.99</p>
+                            <p class="price-des">
+                                <span>&#10004;</span>Delivery Per Order
+                            </p>
+                            <button><a href="#">Select Plan</a></button>
+                        </div>
+                    </article>
+                    <article class="pricing-plan-card">
+                        <h3>Monthly Pass</h3>
+                        <img
+                            src="../project-images/monthly-sub-icon.png"
+                            alt="calendar icon"
+                        />
+                        <div class="price-text monthly-text">
+                            <p class="price-tag">$9.99/mo</p>
+                            <p class="price-des">
+                                <span>&#10004;</span>Unlimited Delivery
+                            </p>
+                            <button><a href="#">Select Plan</a></button>
+                        </div>
+                    </article>
+
+                    <!-- ANCHOR featured plan card -->
+                    <article class="pricing-plan-card featured-plan">
+                        <div class="featured-inner">
+                            <div class="badge">
+                                <p class="badge-text">Best Value</p>
+                            </div>
+                            <h3>Annual Pass</h3>
+                            <img
+                                src="../project-images/annual-pass-icon.png"
+                                alt="annual pass icon"
+                            />
+                            <div class="price-text annual-text">
+                                <p class="price-tag">$69.99/yr</p>
+                                <p class="price-des">
+                                    <span>&#10004;</span>Unlimited Delivery
+                                </p>
+                                <p class="price-des">
+                                    <span>&#10004;</span>10% off every order
+                                </p>
+                                <button class="featured-btn">
+                                    <a href="#">Select Plan</a>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- ANCHOR footer -->
+        <footer>
+            <div class="footer-left">
+                <a href="../index.html">Le Petit Bread &copy; 2026</a>
+            </div>
+            <div class="footer-right">
+                <a href="#"
+                    ><img src="../project-images/instagram.svg" alt="instagram"
+                /></a>
+                <a href="#"
+                    ><img src="../project-images/facebook.svg" alt="facebook"
+                /></a>
+                <a href="#"
+                    ><img src="../project-images/twitter.svg" alt="twitter"
+                /></a>
+            </div>
+        </footer>
+    </body>
+</html>
