@@ -4,23 +4,29 @@ const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu = document.querySelector('.mobile-menu');
 const closeBtn = document.getElementById('close-btn');
 
-// 3 event listeners:
+// Create 3 event listeners:
 // 1. Event Listener for hamburger button to open menu:
 hamburgerBtn.addEventListener('click', openMenu);
 
 function openMenu(e) {
-    // e.stopPropagation();
+    /* hamburger hidden off screen with translateX(100%) by default, .open-menu class applies translateX(0%) */
     mobileMenu.classList.toggle('open-menu');
-    console.log(mobileMenu.classList);
 }
 
 // 2. Event listener for close button in <aside>
 closeBtn.addEventListener('click', (e) =>
+    /* hamburger reverts back to translateX(100%) off screen */
     mobileMenu.classList.remove('open-menu'),
 );
 
 // 3. Event Listener to close mobile menu when clicking outside of the menu
 document.addEventListener('click', (e) => {
+    /* 
+    Validation logic: 
+    - if the click was outside the menu (NOT the menu) 
+    - AND if the click was NOT the hamburger button 
+        -> Check required since hamburger button sits outside of <aside> menu. First condition is immediately satisfied and closes the menu
+    */
     if (!mobileMenu.contains(e.target) && e.target !== hamburgerBtn) {
         mobileMenu.classList.remove('open-menu');
     }
@@ -31,47 +37,57 @@ document.addEventListener('click', (e) => {
 const searchBtn = document.getElementById('search-btn');
 const searchForm = document.querySelector('.search-form');
 const searchInput = document.getElementById('search-input');
-const navBar = document.querySelector('.nav-bar');
 const navRight1 = document.querySelector('.nav-right-1');
 const navRight2 = document.querySelector('.nav-right-2');
-const brandName = document.querySelector('.brand');
 
-// Event Listener for search btn
+// 1. Event Listener for search btn
 searchBtn.addEventListener('click', openSearchBar);
 
 function openSearchBar(e) {
+    /* Show search bar and hide all nav items */
     searchForm.classList.toggle('open-search-bar');
     navRight1.classList.toggle('hide-desktop-nav');
     navRight2.classList.toggle('hide-nav-right-2');
 }
 
-// Event listener to close search bar when clicked outside of search bar
+// 2. Event listener to close search bar when clicked outside of search bar
 document.addEventListener('click', (e) => {
+    /* 
+    Validation logic:
+        - if the click was anywhere except the search form or search button, close everything.
+        - execution: if click was outside the search form AND outside the search button
+    */
     if (!searchForm.contains(e.target) && !searchBtn.contains(e.target)) {
         searchForm.classList.remove('open-search-bar');
         navRight1.classList.remove('hide-desktop-nav');
         navRight2.classList.remove('hide-nav-right-2');
-        brandName.classList.remove('hide-brand');
     }
 });
 
-// NOTE Seach bar keydown event validation
+// NOTE Search bar keydown event validation
 searchInput.addEventListener('keydown', validateSearch);
 
 function validateSearch(e) {
+    /* Only run rest of the function when user presses enter */
     if (e.key !== 'Enter') {
         return;
     }
     e.preventDefault();
 
+    /* Input validation */
+
+    // Trim search value to prevent spaces being entered
     const searchVal = searchInput.value.trim();
+
+    // Create an error message element for when validation fails
     const errorMessageEl = searchForm.querySelector('.search-error');
 
-    // clear previous existing error message if any
+    // Clear previous existing error message if any
     if (errorMessageEl) {
-        error.remove();
+        errorMessageEl.remove();
     }
 
+    // Validate and add error message to DOM
     if (searchVal.length < 4) {
         const error = document.createElement('p');
         error.classList.add('search-error');
@@ -80,21 +96,22 @@ function validateSearch(e) {
         return;
     }
 
-    searchInput.value = '';
+    searchInput.value = ''; /* clear input if validation passes */
 }
 
 // NOTE Clear error message on input event
+// The event listener clears error message as user start correcting input
 searchInput.addEventListener('input', clearSearchError);
 
 function clearSearchError(e) {
     const errorMessageEl = searchForm.querySelector('.search-error');
+    // logic: if error message exists, remove it
     if (errorMessageEl) {
         errorMessageEl.remove();
     }
 }
 
 // ANCHOR Contact form
-
 // DOM Elements
 const errorList = document.querySelector('.error-ul');
 const contactForm = document.querySelector('.contact-form');
@@ -102,7 +119,6 @@ const firstNameEl = document.getElementById('first-name');
 const lastNameEl = document.getElementById('last-name');
 const emailEl = document.getElementById('email');
 const messageEl = document.getElementById('message');
-const submitBtn = document.querySelector('.submit-btn');
 
 // Event listener on contact form for submit
 contactForm.addEventListener('submit', submitForm);
@@ -111,13 +127,20 @@ function submitForm(e) {
     e.preventDefault();
     const emailVal = e.target.querySelector('#email').value.trim();
 
+    // Clear all previous error messages
     errorList.innerHTML = '';
 
+    /* 
+     Runs all three validation and stores their true/false values 
+        1. name validation
+        2. email validation
+        3. message validation
+     */
     const isNameValid = nameValidation();
     const isEmailValid = emailValidation(emailVal);
     const isMessageValid = messageValidation();
 
-    // Check if all fields have passed validation, return success message
+    // Check if all fields have passed validation, return success message on DOM
     if (isNameValid && isEmailValid && isMessageValid) {
         const newLi = document.createElement('li');
         errorList.appendChild(newLi);
@@ -126,7 +149,7 @@ function submitForm(e) {
     }
 }
 
-// Create display message
+// Create display message function
 function createMessage(message) {
     const newLi = document.createElement('li');
     errorList.appendChild(newLi);
@@ -134,11 +157,12 @@ function createMessage(message) {
     newLi.innerHTML = `<span class="material-symbols-outlined">error</span>${message}`;
 }
 
-// NOTE First name and last name validation
-// Logic: Both fields should have at least 2 characters
-// Obtain .value and clean up with trim()
-// Validate logic -> if conditions unmet, display error message to .error-ul
-// clear / reset .error-ul at the beginning
+/* NOTE First name and last name validation
+    Logic: Both fields should have at least 2 characters
+            - Obtain .value and clean up with trim()
+            - Validate logic -> if conditions unmet, display error message to .error-ul
+*/
+
 function nameValidation() {
     const firstNameVal = firstNameEl.value.trim();
     const lastNameVal = lastNameEl.value.trim();
@@ -154,21 +178,27 @@ function nameValidation() {
     // clear fields only if validation passes -> fields are valid
     firstNameEl.value = '';
     lastNameEl.value = '';
+    // return boolean result
     return true;
 }
 
-// NOTE Email validation
+// NOTE Email validation for custom error message display
 function emailValidation(emailVal) {
+    // Using regex to check email format
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // Using regex.test() built in method to test pattern of string/email
+    // logic: only run error message if email is INVALID
     if (!regex.test(emailVal)) {
         const message = 'Please enter a valid email.';
         createMessage(message);
+        // return boolean result
         return false;
     }
 
     // clear fields if fields are valid
     emailEl.value = '';
+    // then return boolean result
     return true;
 }
 
@@ -179,9 +209,12 @@ function messageValidation() {
     if (messageVal.length < 30) {
         const message = 'Your message must be at least 30 characters.';
         createMessage(message);
+        // return boolean result
         return false;
     }
 
+    // clear fields if message length is valid
     messageEl.value = '';
+    // return boolean result
     return true;
 }

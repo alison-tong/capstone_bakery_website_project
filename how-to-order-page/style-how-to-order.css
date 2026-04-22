@@ -16,6 +16,7 @@ body {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 76px;
 }
 
 /* custom scrollbar */
@@ -387,9 +388,6 @@ h3 {
 
 /* ANCHOR Desktop media query */
 @media screen and (min-width: 1200px) {
-    .how-to-order-section {
-        height: 80vh;
-    }
     .heading-container {
         width: 100%;
         margin: 0;

@@ -4,14 +4,12 @@ const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu = document.querySelector('.mobile-menu');
 const closeBtn = document.getElementById('close-btn');
 
-// 3 event listeners:
+// Create 3 event listeners:
 // 1. Event Listener for hamburger button to open menu:
 hamburgerBtn.addEventListener('click', openMenu);
 
 function openMenu(e) {
-    // e.stopPropagation();
     mobileMenu.classList.toggle('open-menu');
-    console.log(mobileMenu.classList);
 }
 
 // 2. Event listener for close button in <aside>
@@ -31,10 +29,8 @@ document.addEventListener('click', (e) => {
 const searchBtn = document.getElementById('search-btn');
 const searchForm = document.querySelector('.search-form');
 const searchInput = document.getElementById('search-input');
-const navBar = document.querySelector('.nav-bar');
 const navRight1 = document.querySelector('.nav-right-1');
 const navRight2 = document.querySelector('.nav-right-2');
-const brandName = document.querySelector('.brand');
 
 // Event Listener for search btn
 searchBtn.addEventListener('click', openSearchBar);
@@ -51,7 +47,6 @@ document.addEventListener('click', (e) => {
         searchForm.classList.remove('open-search-bar');
         navRight1.classList.remove('hide-desktop-nav');
         navRight2.classList.remove('hide-nav-right-2');
-        brandName.classList.remove('hide-brand');
     }
 });
 
@@ -69,7 +64,7 @@ function validateSearch(e) {
 
     // clear previous existing error message if any
     if (errorMessageEl) {
-        error.remove();
+        errorMessageEl.remove();
     }
 
     if (searchVal.length < 4) {
