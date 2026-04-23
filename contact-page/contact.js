@@ -111,7 +111,7 @@ function clearSearchError(e) {
     }
 }
 
-// ANCHOR Contact form
+// ANCHOR Contact form validation
 // DOM Elements
 const errorList = document.querySelector('.error-ul');
 const contactForm = document.querySelector('.contact-form');
@@ -135,6 +135,7 @@ function submitForm(e) {
         1. name validation
         2. email validation
         3. message validation
+        > each validation is set to return true or false boolean
      */
     const isNameValid = nameValidation();
     const isEmailValid = emailValidation(emailVal);
@@ -149,7 +150,7 @@ function submitForm(e) {
     }
 }
 
-// Create display message function
+// Create error/success message display function
 function createMessage(message) {
     const newLi = document.createElement('li');
     errorList.appendChild(newLi);
@@ -188,7 +189,7 @@ function emailValidation(emailVal) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // Using regex.test() built in method to test pattern of string/email
-    // logic: only run error message if email is INVALID
+    // logic: if email format is INVALID, run error message
     if (!regex.test(emailVal)) {
         const message = 'Please enter a valid email.';
         createMessage(message);
